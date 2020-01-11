@@ -71,6 +71,7 @@
             </dependency>
 
 
+            <!--以下三个依赖是thymeleaf支持包，可以设置松校验和热部署-->
             <dependency>
                 <groupId>net.sourceforge.nekohtml</groupId>
                 <artifactId>nekohtml</artifactId>
@@ -108,7 +109,6 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
             </dependency>
-
 
             <dependency>
                 <groupId>tk.mybatis</groupId>

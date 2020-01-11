@@ -20,6 +20,13 @@
             <artifactId>fastjson</artifactId>
         </dependency>
 
+        <!--fastdfs本地依赖-->
+        <dependency>
+            <groupId>org.csource</groupId>
+            <artifactId>fastdfs-client-java</artifactId>
+            <version>1.27-SNAPSHOT</version>
+        </dependency>
+
         <!--dubbo相关依赖-->
         <dependency>
             <groupId>com.alibaba</groupId>

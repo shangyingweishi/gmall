@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gm.gmall.manager.mapper.PmsBaseAttrInfoMapper">
+
+    <select id="selectAttrValueListByValueId" resultMap="selectAttrValueListByValueIdMap">
+        SELECT
+	      pbai.* ,pbai.id as pbai_id,pbav.*,pbav.id as pbav_id
+        FROM
+            pms_base_attr_info pbai,
+            pms_base_attr_value pbav
+        WHERE
+            pbai.id = pbav.attr_id
+        AND
+            pbav.id in (${valueIdStr})
+
+    </select>
+
+    <resultMap id="selectAttrValueListByValueIdMap" type="com.gm.gmall.bean.PmsBaseAttrInfo" autoMapping="true">
+        <result column="pbai_id" property="id"></result>
+        <collection property="attrValueList" ofType="com.gm.gmall.bean.PmsBaseAttrValue" autoMapping="true">
+            <result column="pbav_id" property="id"></result>
+        </collection>
+    </resultMap>
+
+    <!--<select id="getUmsMemberById" resultType="com.gm.gmall.bean.UmsMember" >-->
+    <!--select * from ums_member where id=#{id}-->
+    <!--</select>-->
+
+    <!--<delete id="deleteUmsMemberById">-->
+    <!--delete from ums_member where id=#{id}-->
+    <!--</delete>-->
+
+    <!--<insert id="insertUmsMember" ></insert>-->
+</mapper>
